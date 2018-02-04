@@ -16,39 +16,16 @@ import vinova.henry.com.mvpretrofituser.models.User;
  * Created by dminh on 2/4/2018.
  */
 
-public class AddDataAsyncTask extends AsyncTask<List<User>, Void, Void> {
+public class AddDataAsyncTask extends AsyncTask<Void, Void, Void> {
 
     Activity contextParent;
     DatabaseHandler databaseHandler;
+    List<User> users;
 
-    public AddDataAsyncTask(Activity contextParent, DatabaseHandler handler) {
+    public AddDataAsyncTask(Activity contextParent, DatabaseHandler handler, List<User> users) {
         this.contextParent = contextParent;
         this.databaseHandler = handler;
-    }
-
-    /*@Override
-    protected Void doInBackground(User[]... users) {
-        databaseHandler.deleteAllData();
-        for (User user: users
-             ) {
-
-        }
-        return null;
-    }*/
-
-    @Override
-    protected Void doInBackground(List<User>[] lists) {
-        List<User> list1 = new ArrayList<>();
-        databaseHandler.deleteAllData();
-        for (List<User> users: lists
-                ) {
-            list1 = users;
-        }
-        for (User user: list1
-             ) {
-            databaseHandler.addUserToDb(user);
-        }
-        return null;
+        this.users = users;
     }
 
     @Override
@@ -56,6 +33,16 @@ public class AddDataAsyncTask extends AsyncTask<List<User>, Void, Void> {
         super.onPreExecute();
     }
 
+    @Override
+    protected Void doInBackground(Void... voids) {
+        databaseHandler.deleteAllData();
+
+        for (User user: users
+                ) {
+            databaseHandler.addUserToDb(user);
+        }
+        return null;
+    }
 
     @Override
     protected void onProgressUpdate(Void... values) {

@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="vinova.henry.com.mvpretrofituser.features.home.HomeActivity">
+    tools:context="vinova.henry.com.mvpretrofituser.features.detail.DetailsActivity">
 
 </android.support.constraint.ConstraintLayout>

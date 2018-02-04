@@ -55,7 +55,7 @@ public class HomePresenter implements HomeContract.Presenter{
             public void onResponse(Call<ResultResponse> call, Response<ResultResponse> response) {
                 users.addAll(response.body().getUsers());
 
-                new AddDataAsyncTask(activity, databaseHandler).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, users);
+                new AddDataAsyncTask(activity, databaseHandler, users).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
                 view.showSuccess();
             }
