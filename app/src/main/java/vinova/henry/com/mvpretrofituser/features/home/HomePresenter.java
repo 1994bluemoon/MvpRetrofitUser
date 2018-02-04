@@ -1,5 +1,6 @@
 package vinova.henry.com.mvpretrofituser.features.home;
 
+import android.app.Activity;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -12,6 +13,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import vinova.henry.com.mvpretrofituser.database.AddDataAsyncTask;
 import vinova.henry.com.mvpretrofituser.database.DatabaseHandler;
 import vinova.henry.com.mvpretrofituser.models.ResultResponse;
 import vinova.henry.com.mvpretrofituser.models.User;
@@ -24,13 +26,15 @@ public class HomePresenter implements HomeContract.Presenter{
     private List<User> users;
     private DatabaseHandler databaseHandler;
     private Context mContext;
+    Activity activity;
     SQLiteDatabase db;
 
-    public HomePresenter(HomeContract.View view, Context context) {
+    public HomePresenter(HomeContract.View view, Context context, Activity acc) {
         this.view = view;
         this.mContext = context;
         users = new ArrayList<>();
         databaseHandler = new DatabaseHandler(mContext);
+        this.activity = acc;
 
     }
 
@@ -51,11 +55,7 @@ public class HomePresenter implements HomeContract.Presenter{
             public void onResponse(Call<ResultResponse> call, Response<ResultResponse> response) {
                 users.addAll(response.body().getUsers());
 
-                databaseHandler.deleteAllData();
-                for (User user : users
-                        ) {
-                    databaseHandler.addUserToDb(user);
-                }
+                new AddDataAsyncTask(activity, databaseHandler).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, users);
 
                 view.showSuccess();
             }

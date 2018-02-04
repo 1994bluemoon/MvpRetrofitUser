@@ -1,5 +1,6 @@
 package vinova.henry.com.mvpretrofituser.features.home;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +18,7 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
     UserAdapter adapter;
     HomePresenter presenter;
     IUserService iUserService;
+    HomeActivity activity;
 
     @BindView(R.id.rcv_main)
     RecyclerView rcvMain;
@@ -31,7 +33,7 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
         rcvMain.setLayoutManager(new LinearLayoutManager(this));
         rcvMain.setAdapter(adapter);
 
-        presenter = new HomePresenter(this, this);
+        presenter = new HomePresenter(this, this, activity);
         presenter.getUserFromServer();
     }
 
