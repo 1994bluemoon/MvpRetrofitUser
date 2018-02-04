@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
 
         //iUserService = ApiUtils.getSOService();
 
-        presenter = new HomePresenter(this);
+        presenter = new HomePresenter(this, this);
         presenter.getUserFromServer();
     }
 

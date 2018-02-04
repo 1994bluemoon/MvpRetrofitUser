@@ -41,6 +41,19 @@ public class User {
     @Expose
     private String avatar;
 
+    public User(String name, String username, String email, Address address, String phone, String website, Company company, List<Post> posts, List<AccountHistory> accountHistory, String avatar) {
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+        this.website = website;
+        this.company = company;
+        this.posts = posts;
+        this.accountHistory = accountHistory;
+        this.avatar = avatar;
+    }
+
     public String getName() {
         return name;
     }
