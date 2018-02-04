@@ -49,10 +49,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
         holder.tvName.setText("Name: " + users.get(position).getName());
         holder.tvUsername.setText("UserName: " + users.get(position).getUsername());
         holder.tvEmail.setText("Email: " + users.get(position).getEmail());
-        holder.tvCountry.setText("Country: " + users.get(position).getAddress().getCity());
-        holder.tvCity.setText("City: " + users.get(position).getAddress().getCity());
-        holder.tvLat.setText("Lat: " + users.get(position).getAddress().getGeo().getLat());
-        holder.tvLng.setText("Lng: " + users.get(position).getAddress().getGeo().getLng());
+        //holder.tvCountry.setText("Country: " + users.get(position).getAddress().getCity());
+        //holder.tvCity.setText("City: " + users.get(position).getAddress().getCity());
+        //holder.tvLat.setText("Lat: " + users.get(position).getAddress().getGeo().getLat());
+        //holder.tvLng.setText("Lng: " + users.get(position).getAddress().getGeo().getLng());
     }
 
     @Override

@@ -31,8 +31,6 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
         rcvMain.setLayoutManager(new LinearLayoutManager(this));
         rcvMain.setAdapter(adapter);
 
-        //iUserService = ApiUtils.getSOService();
-
         presenter = new HomePresenter(this, this);
         presenter.getUserFromServer();
     }
@@ -45,6 +43,9 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
 
     @Override
     public void showFail() {
-        Toast.makeText(this, "get user fail", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "load local data", Toast.LENGTH_SHORT).show();*/
+        adapter.setUsers(presenter.getUsers());
+        adapter.notifyDataSetChanged();
     }
+
 }
