@@ -1,4 +1,4 @@
-package vinova.henry.com.mvpretrofituser.features.server;
+package vinova.henry.com.mvpretrofituser.server;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

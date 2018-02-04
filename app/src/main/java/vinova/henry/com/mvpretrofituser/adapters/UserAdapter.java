@@ -1,4 +1,4 @@
-package vinova.henry.com.mvpretrofituser.features.adapters;
+package vinova.henry.com.mvpretrofituser.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +15,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import vinova.henry.com.mvpretrofituser.R;
-import vinova.henry.com.mvpretrofituser.features.models.User;
+import vinova.henry.com.mvpretrofituser.models.User;
 
 /**
  * Created by dminh on 1/31/2018.

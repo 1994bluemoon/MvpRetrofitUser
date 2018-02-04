@@ -1,4 +1,4 @@
-package vinova.henry.com.mvpretrofituser.features.server;
+package vinova.henry.com.mvpretrofituser.server;
 
 /**
  * Created by dminh on 1/31/2018.

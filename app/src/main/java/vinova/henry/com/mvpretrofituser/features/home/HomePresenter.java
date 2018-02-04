@@ -6,10 +6,11 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import vinova.henry.com.mvpretrofituser.features.models.ResultResponse;
-import vinova.henry.com.mvpretrofituser.features.models.User;
-import vinova.henry.com.mvpretrofituser.features.server.ApiUtils;
-import vinova.henry.com.mvpretrofituser.features.server.IUserService;
+import vinova.henry.com.mvpretrofituser.models.ResultResponse;
+import vinova.henry.com.mvpretrofituser.models.User;
+import vinova.henry.com.mvpretrofituser.server.ApiUtils;
+import vinova.henry.com.mvpretrofituser.server.IUserService;
+
 
 /**
  * Created by dminh on 2/4/2018.

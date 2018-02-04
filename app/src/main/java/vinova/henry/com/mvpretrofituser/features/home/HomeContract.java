@@ -1,6 +1,6 @@
 package vinova.henry.com.mvpretrofituser.features.home;
 
-import vinova.henry.com.mvpretrofituser.features.server.IUserService;
+import vinova.henry.com.mvpretrofituser.server.IUserService;
 
 /**
  * Created by dminh on 2/4/2018.

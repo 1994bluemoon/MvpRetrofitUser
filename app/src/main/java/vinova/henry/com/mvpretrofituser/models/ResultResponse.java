@@ -1,4 +1,4 @@
-package vinova.henry.com.mvpretrofituser.features.models;
+package vinova.henry.com.mvpretrofituser.models;
 
 import com.google.gson.annotations.SerializedName;
 

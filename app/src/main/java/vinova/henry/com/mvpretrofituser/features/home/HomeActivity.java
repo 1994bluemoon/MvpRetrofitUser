@@ -9,9 +9,8 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import vinova.henry.com.mvpretrofituser.R;
-import vinova.henry.com.mvpretrofituser.features.adapters.UserAdapter;
-import vinova.henry.com.mvpretrofituser.features.server.ApiUtils;
-import vinova.henry.com.mvpretrofituser.features.server.IUserService;
+import vinova.henry.com.mvpretrofituser.adapters.UserAdapter;
+import vinova.henry.com.mvpretrofituser.server.IUserService;
 
 public class HomeActivity extends AppCompatActivity implements HomeContract.View {
 
