@@ -3,11 +3,9 @@ package vinova.henry.com.mvpretrofituser.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by dminh on 1/31/2018.
- */
+import java.io.Serializable;
 
-public class AccountHistory {
+public class AccountHistory implements Serializable{
     @SerializedName("amount")
     @Expose
     private String amount;

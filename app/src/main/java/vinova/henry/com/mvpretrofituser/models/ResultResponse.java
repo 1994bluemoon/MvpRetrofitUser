@@ -4,10 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-/**
- * Created by dminh on 1/31/2018.
- */
-
 public class ResultResponse {
     @SerializedName("status")
     private String status;

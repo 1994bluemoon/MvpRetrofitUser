@@ -5,5 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="vinova.henry.com.mvpretrofituser.features.detail.DetailsActivity">
+    <FrameLayout
+        android:id="@+id/frame_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

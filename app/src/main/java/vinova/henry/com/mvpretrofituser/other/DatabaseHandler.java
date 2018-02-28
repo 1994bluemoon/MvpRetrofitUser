@@ -1,5 +1,6 @@
-package vinova.henry.com.mvpretrofituser.database;
+package vinova.henry.com.mvpretrofituser.other;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -15,10 +16,6 @@ import vinova.henry.com.mvpretrofituser.models.Company;
 import vinova.henry.com.mvpretrofituser.models.Post;
 import vinova.henry.com.mvpretrofituser.models.User;
 
-/**
- * Created by dminh on 2/4/2018.
- */
-
 public class DatabaseHandler extends SQLiteOpenHelper{
 
     private static final String DATABASE_NAME = "userManager";
@@ -33,7 +30,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     private static final String KEY_WEBSITE = "website";
     private static final String KEY_AVATAR = "avatar";
 
-    SQLiteDatabase db;
+    private SQLiteDatabase db;
 
     public SQLiteDatabase getDb() {
         return db;
@@ -57,13 +54,13 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         this.onCreate(db);
     }
 
-    public void deleteAllData(){
+    void deleteAllData(){
         db = this.getWritableDatabase();
         db.delete(TABLE_NAME, null,null);
         db.close();
     }
 
-    public void addUserToDb(User user) {
+    void addUserToDb(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -84,7 +81,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         String query = "SELECT * FROM " + TABLE_NAME;
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
 
         Address address = new Address();
@@ -92,7 +89,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         Company company = new Company();
         List<AccountHistory> accountHistory = new ArrayList<>();
 
-        while(cursor.isAfterLast() == false) {
+        while(!cursor.isAfterLast()) {
             User user = new User(cursor.getString(1), cursor.getString(0), cursor.getString(4),address, cursor.getString(3), cursor.getString(5),company ,post,accountHistory, cursor.getString(6));
             users.add(user);
             cursor.moveToNext();

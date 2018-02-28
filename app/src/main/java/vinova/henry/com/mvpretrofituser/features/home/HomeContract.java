@@ -1,10 +1,11 @@
 package vinova.henry.com.mvpretrofituser.features.home;
 
-import vinova.henry.com.mvpretrofituser.server.IUserService;
+import android.content.Context;
 
-/**
- * Created by dminh on 2/4/2018.
- */
+import java.util.List;
+
+import vinova.henry.com.mvpretrofituser.models.User;
+import vinova.henry.com.mvpretrofituser.server.IUserService;
 
 public interface HomeContract {
     interface View  {
@@ -13,5 +14,8 @@ public interface HomeContract {
     }
     interface Presenter {
         void getUserFromServer();
+        void onItemClick(List<User> user, Context context, int position);
+        void saveDataOffline();
+        void getDataOffline();
     }
 }

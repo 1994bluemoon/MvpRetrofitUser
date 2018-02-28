@@ -1,26 +1,21 @@
-package vinova.henry.com.mvpretrofituser.database;
+package vinova.henry.com.mvpretrofituser.other;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 
-import vinova.henry.com.mvpretrofituser.features.home.HomePresenter;
 import vinova.henry.com.mvpretrofituser.models.User;
-
-/**
- * Created by dminh on 2/4/2018.
- */
 
 public class AddDataAsyncTask extends AsyncTask<Void, Void, Void> {
 
+    @SuppressLint("StaticFieldLeak")
+    private
     Activity contextParent;
-    DatabaseHandler databaseHandler;
-    List<User> users;
+    private DatabaseHandler databaseHandler;
+    private List<User> users;
 
     public AddDataAsyncTask(Activity contextParent, DatabaseHandler handler, List<User> users) {
         this.contextParent = contextParent;

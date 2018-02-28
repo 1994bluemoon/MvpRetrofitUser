@@ -6,41 +6,48 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by dminh on 1/31/2018.
- */
-
 public class User implements Serializable {
     @SerializedName("name")
     @Expose
     private String name;
+
     @SerializedName("username")
     @Expose
     private String username;
+
     @SerializedName("email")
     @Expose
     private String email;
+
     @SerializedName("address")
     @Expose
     private Address address;
+
     @SerializedName("phone")
     @Expose
     private String phone;
+
     @SerializedName("website")
     @Expose
     private String website;
+
     @SerializedName("company")
     @Expose
     private Company company;
+
     @SerializedName("posts")
     @Expose
     private List<Post> posts = null;
+
     @SerializedName("accountHistory")
     @Expose
     private List<AccountHistory> accountHistory = null;
+
     @SerializedName("avatar")
     @Expose
     private String avatar;
+
+    public User(){}
 
     public User(String name, String username, String email, Address address, String phone, String website, Company company, List<Post> posts, List<AccountHistory> accountHistory, String avatar) {
         this.name = name;
