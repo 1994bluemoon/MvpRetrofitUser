@@ -1,5 +1,6 @@
 package vinova.henry.com.mvpretrofituser.dao;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -7,10 +8,11 @@ import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper{
 
-    public DatabaseHelper(Context context) {
+    DatabaseHelper(Context context) {
         super(context, IUserSchema.DATABASE_NAME, null, IUserSchema.DATABASE_VERSION);
     }
 
+    @SuppressLint("SQLiteString")
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(IUserSchema.CREATE_USER_TABLE);

@@ -29,5 +29,5 @@ public interface IUserSchema {
             + " TEXT "
             + ")";
 
-    String[] USER_COLUMNS = new String[] { KEY_PHONE, KEY_EMAIL, KEY_NAME, KEY_USERNAME, KEY_WEBSITE, KEY_AVATAR,  };
+    String[] USER_COLUMNS = new String[] { KEY_PHONE, KEY_EMAIL, KEY_NAME, KEY_USERNAME, KEY_WEBSITE, KEY_AVATAR };
 }

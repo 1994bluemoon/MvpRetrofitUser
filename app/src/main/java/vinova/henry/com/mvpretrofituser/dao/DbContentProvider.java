@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public abstract class DbContentProvider {
+
     private SQLiteDatabase mDb;
 
     public int delete(String tableName, String selection,

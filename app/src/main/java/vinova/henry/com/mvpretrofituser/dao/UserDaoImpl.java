@@ -18,7 +18,7 @@ public class UserDaoImpl extends DbContentProvider implements IUserDao, IUserSch
     private Cursor cursor;
     private ContentValues initialValues;
 
-    public UserDaoImpl(SQLiteDatabase db) {
+    UserDaoImpl(SQLiteDatabase db) {
         super(db);
     }
 
@@ -43,7 +43,7 @@ public class UserDaoImpl extends DbContentProvider implements IUserDao, IUserSch
 
     @Override
     public List<User> fetchAllUsers() {
-        List<User> userList = new ArrayList<User>();
+        List<User> userList = new ArrayList<>();
         cursor = super.query(TABLE_NAME, USER_COLUMNS, null,
                 null, KEY_USERNAME);
 
@@ -77,11 +77,13 @@ public class UserDaoImpl extends DbContentProvider implements IUserDao, IUserSch
 
     @Override
     public boolean addUsers(List<User> users) {
+        //TODO
         return false;
     }
 
     @Override
     public boolean deleteAllUsers() {
+
         return false;
     }
 
